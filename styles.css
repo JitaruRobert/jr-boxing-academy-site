@@ -1055,10 +1055,10 @@ h3 {
   min-height: 54px;
   padding: 9px 16px 9px 9px;
   color: var(--white);
-  background: rgba(7, 7, 7, 0.86);
-  border: 1px solid rgba(201, 164, 92, 0.48);
+  background: #25d366;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 999px;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(14px);
   font-weight: 900;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
@@ -1067,8 +1067,8 @@ h3 {
 .whatsapp-float:hover,
 .whatsapp-float:focus-visible {
   transform: translateY(-2px);
-  background: rgba(12, 12, 12, 0.94);
-  border-color: rgba(240, 212, 144, 0.78);
+  background: #1fb85a;
+  border-color: rgba(255, 255, 255, 0.62);
 }
 
 .whatsapp-icon {
@@ -1076,11 +1076,15 @@ h3 {
   place-items: center;
   width: 36px;
   height: 36px;
-  color: var(--black);
-  background: var(--gold);
+  color: var(--white);
+  background: transparent;
   border-radius: 50%;
-  font-size: 12px;
-  letter-spacing: 0;
+}
+
+.whatsapp-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
 .whatsapp-label {
@@ -1375,7 +1379,11 @@ h3 {
   .whatsapp-icon {
     width: 28px;
     height: 28px;
-    font-size: 10px;
+  }
+
+  .whatsapp-icon svg {
+    width: 22px;
+    height: 22px;
   }
 
   .whatsapp-label {
