@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JR Boxing Academy favicon">
+  <rect width="64" height="64" rx="10" fill="#070707"/>
+  <rect x="5" y="5" width="54" height="54" rx="8" fill="#c9a45c"/>
+  <path d="M19 19h8v18c0 6-4 9-10 9-2 0-4-.4-6-1.3l1.8-6.3c1.2.5 2.3.8 3.5.8 1.8 0 2.7-1 2.7-3V19Zm12 0h13c6.2 0 10 3.4 10 8.8 0 3.5-1.7 6.1-4.6 7.5L55 45h-9.2l-4.6-8.1H39V45h-8V19Zm12.1 11.7c1.8 0 2.9-1 2.9-2.7 0-1.8-1.1-2.7-2.9-2.7H39v5.4h4.1Z" fill="#070707"/>
+</svg>
