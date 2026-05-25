@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fragrant-cloud-2757.jitaru511.workers.dev/sitemap.xml
+Sitemap: https://jr-boxing-academy-site.vercel.app/sitemap.xml
