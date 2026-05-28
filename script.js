@@ -41,6 +41,58 @@ if (nav && navToggle) {
   });
 }
 
+const credentialModal = document.querySelector("[data-credential-modal]");
+const credentialModalImage = document.querySelector("[data-credential-modal-image]");
+const credentialModalClose = document.querySelector("[data-credential-modal-close]");
+const credentialModalTriggers = document.querySelectorAll("[data-credential-modal-trigger]");
+let activeCredentialTrigger = null;
+
+const closeCredentialModal = () => {
+  if (!credentialModal || !credentialModalImage) return;
+
+  credentialModal.hidden = true;
+  credentialModalImage.removeAttribute("src");
+  credentialModalImage.alt = "";
+  document.body.classList.remove("credential-modal-open");
+
+  if (activeCredentialTrigger) {
+    activeCredentialTrigger.focus({ preventScroll: true });
+    activeCredentialTrigger = null;
+  }
+};
+
+const openCredentialModal = (trigger) => {
+  if (!credentialModal || !credentialModalImage || !credentialModalClose) return;
+
+  const image = trigger.querySelector("img");
+  if (!image) return;
+
+  activeCredentialTrigger = trigger;
+  credentialModalImage.src = image.currentSrc || image.src;
+  credentialModalImage.alt = image.alt || "";
+  credentialModal.hidden = false;
+  document.body.classList.add("credential-modal-open");
+  credentialModalClose.focus({ preventScroll: true });
+};
+
+if (credentialModal && credentialModalImage && credentialModalClose && credentialModalTriggers.length) {
+  credentialModalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => openCredentialModal(trigger));
+  });
+
+  credentialModalClose.addEventListener("click", closeCredentialModal);
+
+  credentialModal.addEventListener("click", (event) => {
+    if (event.target !== credentialModal) return;
+    closeCredentialModal();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || credentialModal.hidden) return;
+    closeCredentialModal();
+  });
+}
+
 const animatedItems = document.querySelectorAll(
   ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .testimonial-grid article, .contact-action"
 );

@@ -450,15 +450,17 @@
 
           <div class="credentials-layout">
             <figure class="certificate-frame">
-              <img
-                class="certificate-image"
-                src="assets/real-web/maestru-sportului2.jpg"
-                width="1200"
-                height="826"
-                alt="Legitimație redactată Maestru al Sportului pentru Robert Jitaru"
-                loading="lazy"
-                decoding="async"
-              >
+              <button class="credential-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide legitimația Maestru al Sportului">
+                <img
+                  class="certificate-image"
+                  src="assets/real-web/maestru-sportului2.jpg"
+                  width="1200"
+                  height="826"
+                  alt="Legitimație redactată Maestru al Sportului pentru Robert Jitaru"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
               <figcaption>
                 Titlu oficial recunoscut de Ministerul Tineretului și Sportului.
               </figcaption>
@@ -489,14 +491,16 @@
               </div>
 
               <figure class="credential-photo">
-                <img
-                  src="assets/real-web/competition-1.jpg"
-                  width="1200"
-                  height="800"
-                  alt="Robert Jitaru pe podium la Campionatul European U22 de box"
-                  loading="lazy"
-                  decoding="async"
-                >
+                <button class="credential-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea cu rezultatul internațional">
+                  <img
+                    src="assets/real-web/competition-1.jpg"
+                    width="1200"
+                    height="800"
+                    alt="Robert Jitaru pe podium la Campionatul European U22 de box"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </button>
                 <figcaption>Rezultate internaționale obținute în competiții.</figcaption>
               </figure>
             </div>
@@ -504,42 +508,48 @@
 
           <div class="credential-docs" aria-label="Documente și licențe Robert Jitaru">
             <article>
-              <img
-                src="assets/real-web/coach-license.jpg"
-                width="894"
-                height="900"
-                alt="Certificat de calificare profesională ca antrenor pentru Robert Jitaru"
-                loading="lazy"
-                decoding="async"
-              >
+              <button class="credential-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide certificatul de antrenor">
+                <img
+                  src="assets/real-web/coach-license.jpg"
+                  width="894"
+                  height="900"
+                  alt="Certificat de calificare profesională ca antrenor pentru Robert Jitaru"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
               <div>
                 <span>Calificare profesională</span>
                 <h3>Certificat de antrenor</h3>
               </div>
             </article>
             <article>
-              <img
-                src="assets/real-web/coach-license2.jpg"
-                width="1200"
-                height="434"
-                alt="Carnet de antrenor de box pentru Robert Jitaru"
-                loading="lazy"
-                decoding="async"
-              >
+              <button class="credential-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide carnetul oficial de antrenor de box">
+                <img
+                  src="assets/real-web/coach-license2.jpg"
+                  width="1200"
+                  height="434"
+                  alt="Carnet de antrenor de box pentru Robert Jitaru"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
               <div>
                 <span>Carnet oficial</span>
                 <h3>Antrenor de box</h3>
               </div>
             </article>
             <article>
-              <img
-                src="assets/real-web/pro-boxer-license.jpg"
-                width="758"
-                height="1100"
-                alt="Licență de boxer profesionist pentru Robert Jitaru"
-                loading="lazy"
-                decoding="async"
-              >
+              <button class="credential-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide licența profesionistă">
+                <img
+                  src="assets/real-web/pro-boxer-license.jpg"
+                  width="758"
+                  height="1100"
+                  alt="Licență de boxer profesionist pentru Robert Jitaru"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
               <div>
                 <span>Box profesionist</span>
                 <h3>Licență profesionistă</h3>
@@ -548,6 +558,11 @@
           </div>
         </div>
       </section>
+
+      <div class="credential-modal" data-credential-modal hidden role="dialog" aria-modal="true" aria-label="Vizualizare document acreditare">
+        <button class="credential-modal-close" type="button" data-credential-modal-close aria-label="Închide imaginea">X</button>
+        <img class="credential-modal-image" data-credential-modal-image alt="">
+      </div>
 
       <section class="gallery band-dark" id="galerie" aria-labelledby="gallery-title">
         <div class="section-inner">
