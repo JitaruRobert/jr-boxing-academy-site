@@ -1046,48 +1046,50 @@ h3 {
 
 .whatsapp-float {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 25;
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  min-height: 56px;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  min-height: 54px;
   padding: 0;
-  color: var(--white);
+  color: #ffffff;
   background: #25d366;
-  border: 0;
+  border: none;
+  outline: none;
   border-radius: 50%;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .whatsapp-float:hover,
 .whatsapp-float:focus-visible {
   transform: translateY(-2px);
-  background: #1fb85a;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+  background: #25d366;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.26);
 }
 
 .whatsapp-icon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  color: var(--white);
-  background: transparent;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  pointer-events: none;
 }
 
 .whatsapp-icon svg {
-  width: 30px;
-  height: 30px;
+  display: block;
+  width: 28px;
+  height: 28px;
   fill: currentColor;
-}
-
-.whatsapp-label {
-  display: none;
 }
 
 @media (max-width: 980px) {
@@ -1137,13 +1139,49 @@ h3 {
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .hero-copy {
+    display: contents;
+  }
+
+  .hero-copy > .eyebrow {
+    order: 1;
+  }
+
+  .hero h1 {
+    order: 2;
+  }
+
+  .hero-lead {
+    order: 3;
+  }
+
+  .hero-actions {
+    order: 4;
   }
 
   .hero-portrait {
-    width: min(300px, 62vw);
-    justify-self: start;
+    order: 5;
+    width: min(100%, 360px);
+    max-width: 360px;
+    align-self: center;
+    margin-top: 26px;
+    margin-inline: auto;
+  }
+
+  .hero-portrait img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .proof-grid {
+    order: 6;
+    width: 100%;
+    margin-top: 30px;
   }
 
   .hero h1 {
@@ -1224,7 +1262,11 @@ h3 {
   }
 
   .hero-portrait {
-    display: none;
+    display: block;
+    width: min(100%, 340px);
+    max-width: 340px;
+    margin-top: 24px;
+    margin-inline: auto;
   }
 
   .hero-media img {
@@ -1364,24 +1406,30 @@ h3 {
   }
 
   .whatsapp-float {
-    right: 12px;
+    right: 16px;
     left: auto;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    width: 48px;
-    height: 48px;
-    min-height: 48px;
-    padding: 0;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
   }
 
   .whatsapp-icon {
-    width: 48px;
-    height: 48px;
+    width: 26px;
+    height: 26px;
   }
 
   .whatsapp-icon svg {
     width: 26px;
     height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-portrait {
+    width: min(100%, calc(100vw - 96px), 340px);
+    transform: translateX(-24px);
   }
 }
 
