@@ -1345,11 +1345,22 @@ h3 {
     font-size: 25px;
   }
 
-  .price-list div,
   .pricing-meta {
     align-items: flex-start;
     flex-direction: column;
     gap: 3px;
+  }
+
+  .price-list div {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .price-list strong {
+    margin-left: auto;
+    text-align: right;
   }
 
   .note {
@@ -1438,7 +1449,14 @@ h3 {
 @media (max-width: 480px) {
   .hero-portrait {
     width: min(100%, calc(100vw - 96px), 340px);
-    transform: translateX(-24px);
+    margin-inline: auto;
+    justify-self: center;
+    align-self: center;
+    transform: none;
+  }
+
+  .hero-portrait img {
+    object-position: center center;
   }
 }
 
