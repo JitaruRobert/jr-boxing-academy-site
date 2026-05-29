@@ -94,7 +94,7 @@ if (credentialModal && credentialModalImage && credentialModalClose && credentia
 }
 
 const animatedItems = document.querySelectorAll(
-  ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .testimonial-grid article, .contact-action"
+  ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .contact-action"
 );
 
 if ("IntersectionObserver" in window) {
