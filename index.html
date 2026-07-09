@@ -570,16 +570,15 @@
             <p class="eyebrow">Galerie</p>
             <h2 id="gallery-title">Momente din competiții, sală și antrenamente.</h2>
           </div>
-          <div class="gallery-filters" aria-label="Filtre galerie">
-            <button class="gallery-filter is-active" type="button" data-gallery-filter="all" aria-pressed="true">Toate</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="echipa" aria-pressed="false">Echipa JR</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="antrenamente" aria-pressed="false">Antrenamente de grup</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="sala" aria-pressed="false">Sală / Spațiu</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="competitii" aria-pressed="false">Competiții</button>
-          </div>
           <div class="gallery-grid">
-            <article class="gallery-card gallery-card-feature" data-gallery-card data-category="competitii">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Parcurs sportiv">
+            <article class="gallery-card gallery-category-card">
+              <button
+                class="gallery-category-trigger"
+                type="button"
+                data-gallery-album-trigger="competitii"
+                data-gallery-album-title="Competiții"
+                aria-label="Deschide categoria Competiții"
+              >
                 <img
                   src="assets/real-web/competition-3.jpg"
                   width="1400"
@@ -591,63 +590,18 @@
               </button>
               <div>
                 <span>Competiții</span>
-                <h3>Parcurs sportiv</h3>
+                <h3>Competiții</h3>
                 <p>Cadre din competiții naționale și internaționale.</p>
               </div>
             </article>
-            <article class="gallery-card" data-gallery-card data-category="competitii">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Ritm de meci">
-                <img
-                  src="assets/real-web/competition-2.jpg"
-                  width="900"
-                  height="900"
-                  alt="Robert Jitaru boxând în ring cu echipament JR"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-              <div>
-                <span>Ring</span>
-                <h3>Ritm de meci</h3>
-                <p>Experiență construită în ritm de meci.</p>
-              </div>
-            </article>
-            <article class="gallery-card" data-gallery-card data-category="antrenamente">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Control și atenție">
-                <img
-                  src="assets/real-web/coach-training-3.jpg"
-                  width="733"
-                  height="1100"
-                  alt="Robert Jitaru în timpul unei demonstrații tehnice la antrenament"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-              <div>
-                <span>Antrenament</span>
-                <h3>Control și atenție</h3>
-                <p>Tehnică explicată de aproape, fără grabă inutilă.</p>
-              </div>
-            </article>
-            <article class="gallery-card" data-gallery-card data-category="antrenamente">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Corecții tehnice">
-                <img
-                  src="assets/real-web/coach-training-1.jpg"
-                  width="733"
-                  height="1100"
-                  alt="Moment dintr-un antrenament de box coordonat de Robert Jitaru"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-              <div>
-                <span>Antrenament</span>
-                <h3>Corecții tehnice</h3>
-                <p>Corecții, ritm și atenție la detaliu.</p>
-              </div>
-            </article>
-            <article class="gallery-card" data-gallery-card data-category="sala">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Grand Fitness Rulmentul">
+            <article class="gallery-card gallery-category-card">
+              <button
+                class="gallery-category-trigger"
+                type="button"
+                data-gallery-album-trigger="sala"
+                data-gallery-album-title="Sală / Spațiu"
+                aria-label="Deschide categoria Sală / Spațiu"
+              >
                 <img
                   src="assets/real-web/gym-space-1.jpg"
                   width="1400"
@@ -659,12 +613,18 @@
               </button>
               <div>
                 <span>Sală / Spațiu</span>
-                <h3>Grand Fitness Rulmentul</h3>
+                <h3>Sală / Spațiu</h3>
                 <p>Spațiul în care se desfășoară antrenamentele.</p>
               </div>
             </article>
-            <article class="gallery-card" data-gallery-card data-category="echipa">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Echipa JR">
+            <article class="gallery-card gallery-category-card">
+              <button
+                class="gallery-category-trigger"
+                type="button"
+                data-gallery-album-trigger="echipa"
+                data-gallery-album-title="Echipa JR"
+                aria-label="Deschide categoria Echipa JR"
+              >
                 <img
                   src="assets/gallery/echipa/echipa-jr.jpg"
                   width="1800"
@@ -680,8 +640,37 @@
                 <p>Oameni diferiți, același cadru de lucru: disciplină, implicare și progres.</p>
               </div>
             </article>
-            <article class="gallery-card" data-gallery-card data-category="antrenamente">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament de grup">
+            <article class="gallery-card gallery-category-card">
+              <button
+                class="gallery-category-trigger"
+                type="button"
+                data-gallery-album-trigger="individual"
+                data-gallery-album-title="Antrenament individual"
+                aria-label="Deschide categoria Antrenament individual"
+              >
+                <img
+                  src="assets/real-web/coach-training-3.jpg"
+                  width="733"
+                  height="1100"
+                  alt="Robert Jitaru în timpul unei demonstrații tehnice la antrenament"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </button>
+              <div>
+                <span>Antrenament individual</span>
+                <h3>Antrenament individual</h3>
+                <p>Atenție directă, corecții tehnice și lucru adaptat nivelului fiecărei persoane.</p>
+              </div>
+            </article>
+            <article class="gallery-card gallery-category-card">
+              <button
+                class="gallery-category-trigger"
+                type="button"
+                data-gallery-album-trigger="antrenamente"
+                data-gallery-album-title="Antrenamente de grup"
+                aria-label="Deschide categoria Antrenamente de grup"
+              >
                 <img
                   src="assets/gallery/antrenamente/antrenament-de-grup.jpg"
                   width="1023"
@@ -693,44 +682,121 @@
               </button>
               <div>
                 <span>Antrenamente de grup</span>
-                <h3>Antrenament de grup</h3>
+                <h3>Antrenamente de grup</h3>
                 <p>Ritm, coordonare și atenție la execuție.</p>
               </div>
             </article>
-            <article class="gallery-card" data-gallery-card data-category="antrenamente">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament de grup">
-                <img
-                  src="assets/gallery/antrenamente/lucru-aplicat.jpg"
-                  width="992"
-                  height="1800"
-                  alt="Sportivi JR Boxing Academy lucrând în perechi în ring"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-              <div>
-                <span>Antrenamente de grup</span>
-                <h3>Antrenament de grup</h3>
-                <p>Tehnica se construiește prin repetiție și corecții constante.</p>
+          </div>
+
+          <div class="gallery-album-modal" data-gallery-album-modal hidden role="dialog" aria-modal="true" aria-labelledby="gallery-album-title">
+            <div class="gallery-album-panel">
+              <button class="gallery-album-close" type="button" data-gallery-album-close aria-label="Închide categoria">X</button>
+              <div class="gallery-album-head">
+                <p class="eyebrow">Galerie</p>
+                <h3 id="gallery-album-title" data-gallery-album-title>Galerie</h3>
               </div>
-            </article>
-            <article class="gallery-card" data-gallery-card data-category="antrenamente">
-              <button class="gallery-zoom-trigger" type="button" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament de grup">
-                <img
-                  src="assets/gallery/sala/spatiul-de-antrenament.jpg"
-                  width="1020"
-                  height="1800"
-                  alt="Sportivi JR Boxing Academy lucrând la sacii de box"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </button>
-              <div>
-                <span>Antrenamente de grup</span>
-                <h3>Antrenament de grup</h3>
-                <p>Ritm, tehnică și efort construit în grup.</p>
+              <div class="gallery-album-grid" aria-label="Poze din categoria selectată">
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="competitii" data-credential-modal-trigger aria-label="Deschide imaginea Parcurs sportiv">
+                  <img
+                    src="assets/real-web/competition-3.jpg"
+                    width="1400"
+                    height="933"
+                    alt="Robert Jitaru în ring la o competiție internațională de box"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Parcurs sportiv</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="competitii" data-credential-modal-trigger aria-label="Deschide imaginea Ritm de meci">
+                  <img
+                    src="assets/real-web/competition-2.jpg"
+                    width="900"
+                    height="900"
+                    alt="Robert Jitaru boxând în ring cu echipament JR"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Ritm de meci</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="sala" data-credential-modal-trigger aria-label="Deschide imaginea Grand Fitness Rulmentul">
+                  <img
+                    src="assets/real-web/gym-space-1.jpg"
+                    width="1400"
+                    height="700"
+                    alt="Spațiu de box premium pentru antrenamente la JR Boxing Academy Brașov"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Grand Fitness Rulmentul</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="echipa" data-credential-modal-trigger aria-label="Deschide imaginea Echipa JR">
+                  <img
+                    src="assets/gallery/echipa/echipa-jr.jpg"
+                    width="1800"
+                    height="1360"
+                    alt="Echipa JR Boxing Academy în sala de box"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Echipa JR</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="individual" data-credential-modal-trigger aria-label="Deschide imaginea Control și atenție">
+                  <img
+                    src="assets/real-web/coach-training-3.jpg"
+                    width="733"
+                    height="1100"
+                    alt="Robert Jitaru în timpul unei demonstrații tehnice la antrenament"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Control și atenție</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="individual" data-credential-modal-trigger aria-label="Deschide imaginea Corecții tehnice">
+                  <img
+                    src="assets/real-web/coach-training-1.jpg"
+                    width="733"
+                    height="1100"
+                    alt="Moment dintr-un antrenament de box coordonat de Robert Jitaru"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Corecții tehnice</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="antrenamente" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament de grup">
+                  <img
+                    src="assets/gallery/antrenamente/antrenament-de-grup.jpg"
+                    width="1023"
+                    height="1800"
+                    alt="Sportivi JR Boxing Academy lucrând în gardă la antrenament de grup"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Antrenament de grup</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="antrenamente" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament în perechi">
+                  <img
+                    src="assets/gallery/antrenamente/lucru-aplicat.jpg"
+                    width="992"
+                    height="1800"
+                    alt="Sportivi JR Boxing Academy lucrând în perechi în ring"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Antrenament în perechi</span>
+                </button>
+                <button class="gallery-album-thumb" type="button" data-gallery-album-image data-gallery-album="antrenamente" data-credential-modal-trigger aria-label="Deschide imaginea Antrenament la sac">
+                  <img
+                    src="assets/gallery/sala/spatiul-de-antrenament.jpg"
+                    width="1020"
+                    height="1800"
+                    alt="Sportivi JR Boxing Academy lucrând la sacii de box"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <span>Antrenament la sac</span>
+                </button>
               </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>

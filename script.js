@@ -93,31 +93,59 @@ if (credentialModal && credentialModalImage && credentialModalClose && credentia
   });
 }
 
-const galleryFilterButtons = document.querySelectorAll("[data-gallery-filter]");
-const galleryCards = document.querySelectorAll("[data-gallery-card]");
+const galleryAlbumModal = document.querySelector("[data-gallery-album-modal]");
+const galleryAlbumTitle = document.querySelector("[data-gallery-album-title]");
+const galleryAlbumClose = document.querySelector("[data-gallery-album-close]");
+const galleryAlbumTriggers = document.querySelectorAll("[data-gallery-album-trigger]");
+const galleryAlbumImages = document.querySelectorAll("[data-gallery-album-image]");
+let activeGalleryAlbumTrigger = null;
 
-const setGalleryFilter = (filter) => {
-  galleryCards.forEach((card) => {
-    const isVisible = filter === "all" || card.dataset.category === filter;
-    card.classList.toggle("is-gallery-hidden", !isVisible);
-    card.hidden = !isVisible;
-  });
+const closeGalleryAlbum = () => {
+  if (!galleryAlbumModal) return;
 
-  galleryFilterButtons.forEach((button) => {
-    const isActive = button.dataset.galleryFilter === filter;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
+  galleryAlbumModal.hidden = true;
+  document.body.classList.remove("gallery-album-open");
+
+  if (activeGalleryAlbumTrigger) {
+    activeGalleryAlbumTrigger.focus({ preventScroll: true });
+    activeGalleryAlbumTrigger = null;
+  }
 };
 
-if (galleryFilterButtons.length && galleryCards.length) {
-  galleryFilterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      setGalleryFilter(button.dataset.galleryFilter || "all");
-    });
+const openGalleryAlbum = (trigger) => {
+  if (!galleryAlbumModal || !galleryAlbumTitle || !galleryAlbumClose) return;
+
+  const album = trigger.dataset.galleryAlbumTrigger;
+  if (!album) return;
+
+  galleryAlbumImages.forEach((item) => {
+    item.hidden = item.dataset.galleryAlbum !== album;
   });
 
-  setGalleryFilter("all");
+  activeGalleryAlbumTrigger = trigger;
+  galleryAlbumTitle.textContent = trigger.dataset.galleryAlbumTitle || "Galerie";
+  galleryAlbumModal.hidden = false;
+  document.body.classList.add("gallery-album-open");
+  galleryAlbumClose.focus({ preventScroll: true });
+};
+
+if (galleryAlbumModal && galleryAlbumTitle && galleryAlbumClose && galleryAlbumTriggers.length) {
+  galleryAlbumTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => openGalleryAlbum(trigger));
+  });
+
+  galleryAlbumClose.addEventListener("click", closeGalleryAlbum);
+
+  galleryAlbumModal.addEventListener("click", (event) => {
+    if (event.target !== galleryAlbumModal) return;
+    closeGalleryAlbum();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || galleryAlbumModal.hidden) return;
+    if (credentialModal && !credentialModal.hidden) return;
+    closeGalleryAlbum();
+  });
 }
 
 const animatedItems = document.querySelectorAll(
