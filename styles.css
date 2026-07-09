@@ -941,12 +941,12 @@ h3 {
 .credential-modal {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.94);
+  background: rgba(0, 0, 0, 0.92);
 }
 
 .credential-modal-image {
@@ -1007,6 +1007,25 @@ h3 {
   grid-column: span 2;
 }
 
+.gallery-zoom-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  border: 0;
+  cursor: pointer;
+}
+
+.gallery-zoom-trigger:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -5px;
+}
+
 .gallery-card img {
   position: absolute;
   inset: 0;
@@ -1017,6 +1036,13 @@ h3 {
   object-position: center;
   filter: saturate(0.94) contrast(1.04);
   transform: scale(1.01);
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.gallery-zoom-trigger:hover img,
+.gallery-zoom-trigger:focus-visible img {
+  filter: saturate(1) contrast(1.06);
+  transform: scale(1.04);
 }
 
 .gallery-card::after {
@@ -1025,12 +1051,14 @@ h3 {
   inset: 0;
   z-index: 1;
   background: linear-gradient(180deg, rgba(7, 7, 7, 0.06), rgba(7, 7, 7, 0.92));
+  pointer-events: none;
 }
 
 .gallery-card > div {
   position: relative;
   z-index: 2;
   max-width: 420px;
+  pointer-events: none;
 }
 
 .testimonial-grid {
