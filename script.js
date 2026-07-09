@@ -98,7 +98,7 @@ const galleryCards = document.querySelectorAll("[data-gallery-card]");
 
 const setGalleryFilter = (filter) => {
   galleryCards.forEach((card) => {
-    const isVisible = filter === "all" || card.dataset.galleryCategory === filter;
+    const isVisible = filter === "all" || card.dataset.category === filter;
     card.classList.toggle("is-gallery-hidden", !isVisible);
     card.hidden = !isVisible;
   });
