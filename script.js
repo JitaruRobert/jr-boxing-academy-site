@@ -93,6 +93,33 @@ if (credentialModal && credentialModalImage && credentialModalClose && credentia
   });
 }
 
+const galleryFilterButtons = document.querySelectorAll("[data-gallery-filter]");
+const galleryCards = document.querySelectorAll("[data-gallery-card]");
+
+const setGalleryFilter = (filter) => {
+  galleryCards.forEach((card) => {
+    const isVisible = filter === "all" || card.dataset.galleryCategory === filter;
+    card.classList.toggle("is-gallery-hidden", !isVisible);
+    card.hidden = !isVisible;
+  });
+
+  galleryFilterButtons.forEach((button) => {
+    const isActive = button.dataset.galleryFilter === filter;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+};
+
+if (galleryFilterButtons.length && galleryCards.length) {
+  galleryFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setGalleryFilter(button.dataset.galleryFilter || "all");
+    });
+  });
+
+  setGalleryFilter("all");
+}
+
 const animatedItems = document.querySelectorAll(
   ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .contact-action"
 );
