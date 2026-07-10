@@ -1217,6 +1217,10 @@ h3 {
   justify-content: center;
 }
 
+.testimonial-track.is-centered {
+  justify-content: center;
+}
+
 .testimonial-card {
   flex: 0 0 calc((100% - 36px) / 3);
   max-width: 390px;
@@ -1320,6 +1324,34 @@ h3 {
   color: rgba(245, 240, 230, 0.92);
   font-size: 15.5px;
   line-height: 1.58;
+}
+
+.testimonial-card-long .testimonial-back {
+  gap: 16px;
+}
+
+.testimonial-card-long .testimonial-back blockquote {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  font-size: 13.4px;
+  line-height: 1.45;
+  scrollbar-color: rgba(201, 164, 92, 0.52) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.testimonial-card-long .testimonial-back blockquote::-webkit-scrollbar {
+  width: 4px;
+}
+
+.testimonial-card-long .testimonial-back blockquote::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.testimonial-card-long .testimonial-back blockquote::-webkit-scrollbar-thumb {
+  background: rgba(201, 164, 92, 0.52);
+  border-radius: 999px;
 }
 
 .testimonial-author {
@@ -1582,6 +1614,10 @@ h3 {
 
   .testimonial-track.is-single .testimonial-card {
     flex-basis: min(100%, 390px);
+  }
+
+  .testimonial-track.is-centered .testimonial-card {
+    flex-basis: min(calc((100% - 18px) / 2), 390px);
   }
 
   .gallery-album-grid {
@@ -1858,6 +1894,11 @@ h3 {
   .testimonial-back blockquote {
     font-size: 15px;
     line-height: 1.54;
+  }
+
+  .testimonial-card-long .testimonial-back blockquote {
+    font-size: 13px;
+    line-height: 1.42;
   }
 
   .footer-inner {

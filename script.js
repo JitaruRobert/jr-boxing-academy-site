@@ -179,6 +179,7 @@ if (testimonialCarousel) {
     const maxIndex = getMaxTestimonialIndex();
     activeTestimonialIndex = Math.min(Math.max(activeTestimonialIndex, 0), maxIndex);
     track.classList.toggle("is-single", cards.length === 1);
+    track.classList.toggle("is-centered", cards.length <= getVisibleCards());
     track.style.transform = `translateX(-${activeTestimonialIndex * getTestimonialStep()}px)`;
     prevButton.disabled = activeTestimonialIndex === 0;
     nextButton.disabled = activeTestimonialIndex === maxIndex;
