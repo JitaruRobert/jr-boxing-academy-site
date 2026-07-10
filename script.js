@@ -148,8 +148,86 @@ if (galleryAlbumModal && galleryAlbumTitle && galleryAlbumClose && galleryAlbumT
   });
 }
 
+const testimonialCarousel = document.querySelector("[data-testimonial-carousel]");
+
+if (testimonialCarousel) {
+  const track = testimonialCarousel.querySelector("[data-testimonial-track]");
+  const viewport = testimonialCarousel.querySelector("[data-testimonial-viewport]");
+  const prevButton = testimonialCarousel.querySelector("[data-testimonial-prev]");
+  const nextButton = testimonialCarousel.querySelector("[data-testimonial-next]");
+  const cards = Array.from(testimonialCarousel.querySelectorAll("[data-testimonial-card]"));
+  let activeTestimonialIndex = 0;
+  let pointerStartX = 0;
+  let pointerEndX = 0;
+
+  const getVisibleCards = () => {
+    if (window.matchMedia("(max-width: 720px)").matches) return 1;
+    if (window.matchMedia("(max-width: 980px)").matches) return 2;
+    return 3;
+  };
+
+  const getMaxTestimonialIndex = () => Math.max(0, cards.length - getVisibleCards());
+
+  const getTestimonialStep = () => {
+    if (cards.length < 2) return 0;
+    return cards[1].offsetLeft - cards[0].offsetLeft;
+  };
+
+  const updateTestimonialCarousel = () => {
+    if (!track || !prevButton || !nextButton) return;
+
+    const maxIndex = getMaxTestimonialIndex();
+    activeTestimonialIndex = Math.min(Math.max(activeTestimonialIndex, 0), maxIndex);
+    track.classList.toggle("is-single", cards.length === 1);
+    track.style.transform = `translateX(-${activeTestimonialIndex * getTestimonialStep()}px)`;
+    prevButton.disabled = activeTestimonialIndex === 0;
+    nextButton.disabled = activeTestimonialIndex === maxIndex;
+  };
+
+  const setTestimonialIndex = (index) => {
+    activeTestimonialIndex = index;
+    updateTestimonialCarousel();
+  };
+
+  cards.forEach((card) => {
+    const toggleCard = () => {
+      const isFlipped = card.classList.toggle("is-flipped");
+      card.setAttribute("aria-pressed", String(isFlipped));
+    };
+
+    card.addEventListener("click", toggleCard);
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      toggleCard();
+    });
+  });
+
+  prevButton?.addEventListener("click", () => setTestimonialIndex(activeTestimonialIndex - 1));
+  nextButton?.addEventListener("click", () => setTestimonialIndex(activeTestimonialIndex + 1));
+
+  viewport?.addEventListener("pointerdown", (event) => {
+    pointerStartX = event.clientX;
+    pointerEndX = event.clientX;
+  });
+
+  viewport?.addEventListener("pointermove", (event) => {
+    pointerEndX = event.clientX;
+  });
+
+  viewport?.addEventListener("pointerup", () => {
+    const delta = pointerEndX - pointerStartX;
+    if (Math.abs(delta) < 48) return;
+    setTestimonialIndex(activeTestimonialIndex + (delta < 0 ? 1 : -1));
+  });
+
+  window.addEventListener("resize", updateTestimonialCarousel);
+  updateTestimonialCarousel();
+}
+
 const animatedItems = document.querySelectorAll(
-  ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .contact-action"
+  ".service-preview article, .feature-grid article, .timeline article, .pricing-card, .steps article, .method-media, .credential-list article, .credential-photo, .credential-docs article, .gallery-grid article, .testimonial-card, .contact-action"
 );
 
 if ("IntersectionObserver" in window) {
